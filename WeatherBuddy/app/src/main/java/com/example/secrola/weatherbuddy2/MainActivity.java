@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -11,12 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.database.Cursor;
 
 public class MainActivity extends AppCompatActivity {
     private static EditText username;
     private static EditText password;
     private static Button login_btn;
     private static Button register_btn;
+    DB myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +39,18 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), UserScreen.class);
-                        startActivity(intent);
+                        Cursor res = myDB.getOneData(username.getText().toString());
+                        if (res.getCount() == 0) {
+                            showMessage("Error", "Username not found");
+                            return;
+                        }
+                        res.moveToFirst();
+                        if (res.getString(1).equals(password.toString())) {
+                            Intent intent = new Intent(getApplicationContext(), UserScreen.class);
+                            startActivity(intent);
+                        } else {
+                            showMessage("Error", "Wrong password");
+                        }
                     }
                 }
         );
@@ -55,6 +68,23 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+    }
+
+    public void showMessage (String title, String Message){
+        // create a new alert dialog builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Sets whether the dialog is cancelable or not.
+        builder.setCancelable(true);
+
+        // Set the title displayed in the dialog
+        builder.setTitle(title);
+
+        // set the message to display
+        builder.setMessage(Message);
+
+        // creates an AlertDialog with the arguments supplied to this builder and immediately displays the dialog.
+        builder.show();
     }
 
     @Override
