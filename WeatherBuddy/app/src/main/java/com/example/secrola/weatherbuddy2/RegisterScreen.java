@@ -50,7 +50,7 @@ public class RegisterScreen extends AppCompatActivity {
                         //Log.d("username",username.getText().toString());
                         if (isInserted) {
                             Toast.makeText(RegisterScreen.this, "User: "+username.getText().toString()+" has been registered, you can now log in", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), Pref.class);
                             startActivity(intent);
                         }
                     }

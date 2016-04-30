@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.secrola.weatherbuddy2.Pref">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/pref_view"
+        android:text="Preferences: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="36sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/small"
+        android:text="     please type in your attire preference"
+        android:layout_below="@+id/pref_view"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/small"
+        android:id="@+id/aboveEightyStatic"
+        android:text="Temp above 80°F: "
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/aboveEightyStatic"
+        android:id="@+id/aboveEightyEdit"
+        android:hint="  ex.  Shorts and T-Shirt" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/btwEightySixty"
+        android:layout_below="@id/aboveEightyEdit"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Between 55°F and 75°F"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btwEightySixty"
+        android:id="@id/btwEightySixtyEdit"
+        android:hint="   ex.  Pants/Shorts and long sleeve"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/btwSixtyforty"
+        android:layout_below="@id/btwEightySixtyEdit"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Between 40°F and 50°F"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btwSixtyforty"
+        android:id="@id/btwSixtyFortyEdit"
+        android:hint="   ex.  Jeans, Sweater, and Jacket"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/UnderThirtyFive"
+        android:layout_below="@id/btwSixtyFortyEdit"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Under 35°F"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/UnderThirtyFive"
+        android:id="@id/UnderThirtyFiveEdit"
+        android:hint="   ex.  Jeans and Trench Coat"
+        />
+
+
+
+</RelativeLayout>

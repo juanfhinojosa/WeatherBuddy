@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btwEightySixtyEdit" type="id">btwEightySixtyEdit</item>
+    <item name="btwSixtyFortyEdit" type="id">fortysixtyEdit</item>
+    <item name="btwSixtyForty" type="id">fortysixtyStatic</item>
+    <item name="UnderThirtyFiveEdit" type="id">underThirtyFiveEdit</item>
+</resources>
