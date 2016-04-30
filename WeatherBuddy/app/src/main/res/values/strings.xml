@@ -14,9 +14,9 @@
     <string name="passwordTextr">Password</string>
     <string name="signup_btn">Sign Up</string>
     <string name="title_activity_test_activity">test_activity</string>
-    <string name="temp_view">temp</string>
-    <string name="condition_view">cond</string>
-    <string name="location_view">loc</string>
+    <string name="temp_view"></string>
+    <string name="condition_view"></string>
+    <string name="location_view"></string>
     <string name="temp_text">Temperature:</string>
     <string name="condition_text">Condition:</string>
     <string name="location_text">Location:</string>
