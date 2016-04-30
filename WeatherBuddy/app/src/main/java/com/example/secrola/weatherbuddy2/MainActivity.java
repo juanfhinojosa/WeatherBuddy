@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         res.moveToFirst();
                         if (res.getString(2).equals(password.getText().toString())) {
                             Intent intent = new Intent(getApplicationContext(), UserScreen.class);
+                            intent.putExtra("key", username.getText().toString());
                             startActivity(intent);
                         } else {
                             showMessage("Error", "Wrong password");

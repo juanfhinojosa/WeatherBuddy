@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +56,8 @@ public class Pref extends AppCompatActivity {
                             if (isInserted) {
                                 //Toast.makeText(RegisterScreen.this, "User: "+username.getText().toString()+" has been registered, you can now log in", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Log.d("bundle", username);
+                                intent.putExtra("key", username);
                                 startActivity(intent);
                             }
                         }

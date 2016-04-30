@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_below="@+id/temp_view"
-        android:layout_height="150dp"
+        android:layout_height="75dp"
         android:text="@string/condition_view"
         android:id="@+id/condition_view"
         android:gravity="center"
@@ -34,8 +34,18 @@
         android:fontFamily="sans-serif-light"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_below="@+id/condition_view"
         android:layout_height="150dp"
+        android:layout_below="@+id/condition_view"
+        android:id="@+id/preference_view"
+        android:text=""
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/preference_view"
+        android:layout_height="75dp"
         android:text="@string/location_view"
         android:id="@+id/location_view"
         android:gravity="center"
