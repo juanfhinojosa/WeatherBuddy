@@ -20,11 +20,14 @@ public class DB extends SQLiteOpenHelper {
     public static final String COL_1 = "ID";
     public static final String COL_2 = "USERNAME";
     public static final String COL_3 = "PASS";
-    /*
-    public static final String COL_3 = "DATE";
-    public static final String COL_4 = "LOCATION";
-    public static final String COL_5 = "NOTES";
-    */
+    public static final String TABLE_NAME_TWO = "PREF";
+    public static final String COL_1_2 = "ID";
+    public static final String COL_2_2 = "USER_ID";
+    public static final String COL_3_2 = "ONE";
+    public static final String COL_4_2 = "TWO";
+    public static final String COL_5_2 = "THREE";
+    public static final String COL_6_2 = "FOUR";
+
 
     public DB(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -33,6 +36,7 @@ public class DB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASS TEXT);");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_TWO + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT, ONE TEXT, TWO TEXT, THREE TEXT, FOUR TEXT);");
 
     }
 
@@ -60,6 +64,30 @@ public class DB extends SQLiteOpenHelper {
             return true;
         }
     }
+
+
+    public boolean insertDataTwo(String username, String one, String two, String three, String four) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2_2, username);
+        contentValues.put(COL_3_2, one);
+        contentValues.put(COL_4_2, two);
+        contentValues.put(COL_5_2, three );
+        contentValues.put(COL_6_2, four);
+        long result = db.insert(TABLE_NAME_TWO, null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public Cursor getOneDataTwo(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME_TWO + " where USER_ID == "+"'"+ username+"'", null);
+        return res;
+    }
+
 
     public Cursor getOneData(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
