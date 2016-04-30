@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         } else {
                             showMessage("Error", "Wrong password");
-                            showMessage("Pass", password.getText().toString()+" "+res.getString(2));
+                            //showMessage("Pass", password.getText().toString()+" "+res.getString(2));
                         }
                     }
                 }
@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), RegisterScreen.class);
+                        startActivity(intent);
+                        /*
                         Cursor res = myDB.getOneData(username.getText().toString());
                         while (res.moveToNext()) {
                             if (res.getString(1).equals(username.getText().toString())) {
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         if (isInserted) {
                             Toast.makeText(MainActivity.this, "User: "+username.getText().toString()+" has been registered, you can now log in", Toast.LENGTH_LONG).show();
                         }
+                        */
                     }
                 }
         );

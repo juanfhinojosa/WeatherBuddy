@@ -46,8 +46,8 @@ public class DB extends SQLiteOpenHelper {
     public boolean insertData(String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, "'"+username+"'");
-        contentValues.put(COL_3, "'"+password+"'");
+        contentValues.put(COL_2, username);
+        contentValues.put(COL_3, password);
         /*
         contentValues.put(COL_3, date);
         contentValues.put(COL_4, location);
