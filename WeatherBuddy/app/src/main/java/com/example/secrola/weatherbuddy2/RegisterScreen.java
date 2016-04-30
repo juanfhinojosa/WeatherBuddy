@@ -8,14 +8,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterScreen extends AppCompatActivity {
-    private static EditText username;
-    private static EditText password;
-    private static Button signup_btn;
+    EditText username;
+    EditText password;
+    Button signup_btn;
     DB myDB;
 
     @Override
@@ -25,6 +27,8 @@ public class RegisterScreen extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         SignupButton();
+        myDB = new DB(this);
+
     }
 
     public void SignupButton() {
@@ -37,11 +41,13 @@ public class RegisterScreen extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor res = myDB.getOneData(username.getText().toString());
-                        if (res.getCount() == 0) {
+                        if (res.getCount() > 0) {
                             showMessage("Error", "Username taken");
                             return;
                         }
-                        boolean isInserted = myDB.insertData(username.toString(), password.toString());
+                        boolean isInserted = myDB.insertData(username.getText().toString(), password.getText().toString());
+                        //Toast.makeText(RegisterScreen.this, username.getText().toString(), Toast.LENGTH_LONG).show();
+                        //Log.d("username",username.getText().toString());
                         if (isInserted) {
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);

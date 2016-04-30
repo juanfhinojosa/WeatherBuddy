@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
+import android.util.Log;
 
 import java.net.PortUnreachableException;
 
@@ -14,10 +15,11 @@ import java.net.PortUnreachableException;
  * Created by juanhinojosa on 4/29/16.
  */
 public class DB extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME =  "usr_pass.db";
-    public static final String TABLE_NAME = "users";
-    public static final String COL_1 = "Username";
-    public static final String COL_2 = "Password";
+    public static final String DATABASE_NAME =  "USER_PASS.db";
+    public static final String TABLE_NAME = "USERS";
+    public static final String COL_1 = "ID";
+    public static final String COL_2 = "USERNAME";
+    public static final String COL_3 = "PASS";
     /*
     public static final String COL_3 = "DATE";
     public static final String COL_4 = "LOCATION";
@@ -30,7 +32,7 @@ public class DB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + "(USERNAME TEXT, PASSWORD TEXT);");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASS TEXT);");
 
     }
 
@@ -44,8 +46,8 @@ public class DB extends SQLiteOpenHelper {
     public boolean insertData(String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1, username);
-        contentValues.put(COL_2, password);
+        contentValues.put(COL_2, "'"+username+"'");
+        contentValues.put(COL_3, "'"+password+"'");
         /*
         contentValues.put(COL_3, date);
         contentValues.put(COL_4, location);
@@ -59,9 +61,20 @@ public class DB extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getOneData(String id) {
+    public Cursor getOneData(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " where Username == "+ id, null);
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " where USERNAME == "+"'"+ username+"'", null);
+        return res;
+    }
+
+    public Cursor getAllData() {
+        // Open the database for reading and writing
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // A Cursor represents the result of a query and basically points to one row of the query result.
+        // This way Android can buffer the query results efficiently; as it does not have to load all data into memory.
+        // the "*" means select "all"
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME,null);
         return res;
     }
 
