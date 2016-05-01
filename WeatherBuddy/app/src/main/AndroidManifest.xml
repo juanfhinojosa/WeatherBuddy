@@ -31,7 +31,8 @@
         <activity
             android:name=".test_activity"
             android:label="@string/title_activity_test_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Pref"></activity>
     </application>
 
 </manifest>

@@ -50,7 +50,8 @@ public class RegisterScreen extends AppCompatActivity {
                         //Log.d("username",username.getText().toString());
                         if (isInserted) {
                             Toast.makeText(RegisterScreen.this, "User: "+username.getText().toString()+" has been registered, you can now log in", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), Pref.class);
+                            intent.putExtra("key", username.getText().toString());
                             startActivity(intent);
                         }
                     }
@@ -73,4 +74,11 @@ public class RegisterScreen extends AppCompatActivity {
         // creates an AlertDialog with the arguments supplied to this builder and immediately displays the dialog.
         builder.show();
     }
+
+    /*
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putStringArrayList(X_COORDINATE, username);
+    }
+    */
 }

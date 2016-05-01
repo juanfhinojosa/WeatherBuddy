@@ -20,9 +20,12 @@
         android:id="@+id/textView_registrationText"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
-    <TextView
+    <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -34,40 +37,38 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/editText_personName"
         android:layout_toStartOf="@+id/editText_personName" />
+         -->
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/usernameText"
         android:id="@+id/textView_usernameText"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/textView_registrationText"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/passwordTextr"
         android:id="@+id/textView_passwordText"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView_usernameText"
-        android:layout_alignRight="@+id/textView_usernameText"
-        android:layout_alignEnd="@+id/textView_usernameText" />
+        android:layout_below="@+id/editText_username"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:id="@+id/editText_username"
-        android:layout_below="@+id/editText_personName"
-        android:layout_toRightOf="@+id/textView_usernameText"
-        android:layout_alignRight="@+id/editText_personName"
-        android:layout_alignEnd="@+id/editText_personName"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_below="@+id/textView_usernameText"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
-    <EditText
+    <!-- <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -75,24 +76,24 @@
         android:id="@+id/editText_personName"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/textView_usernameText"
-        android:layout_toEndOf="@+id/textView_usernameText" />
+        android:layout_toEndOf="@+id/textView_usernameText" /> -->
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/editText_password"
-        android:layout_below="@+id/editText_username"
-        android:layout_toRightOf="@+id/textView_passwordText"
-        android:layout_toEndOf="@+id/textView_passwordText" />
+        android:layout_below="@+id/textView_passwordText"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:text="@string/signup_btn"
         android:id="@+id/button_signup"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/editText_password"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 </RelativeLayout>
