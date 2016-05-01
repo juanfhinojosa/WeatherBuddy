@@ -69,13 +69,15 @@ public class UserScreen extends AppCompatActivity implements WeatherServiceCallb
         Integer result;
 
         if (temp > 80) {
-            result = 3;
+            //Log.d(">80", temp.toString());
+            result = 2;
             return result;
         } else if (temp > 55) {
-            result = 4;
+            result = 3;
+            //Log.d(">55", temp.toString());
             return result;
         } else if (temp > 37) {
-            result = 5;
+            result = 4;
             return result;
         } else {
             result = 5;
@@ -90,14 +92,14 @@ public class UserScreen extends AppCompatActivity implements WeatherServiceCallb
         bundle = getIntent().getExtras();
 
         Item item = channel.getItem();
-        Log.d("bundle",bundle.getString("key"));
+        //Log.d("bundle",bundle.getString("key"));
         username = bundle.getString("key");
 
         location_view.setText(service.getLocation());
 
         tempr = item.getCondition().getTemperature();
 
-        Log.d("temp", tempr.toString());
+        //Log.d("temp", tempr.toString());
 
         temp_view.setText(item.getCondition().getTemperature()+ " \u00B0 " +channel.getUnits().getTemperature());
         condition_view.setText(item.getCondition().getDescription());
