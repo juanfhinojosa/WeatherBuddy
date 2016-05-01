@@ -16,13 +16,17 @@
         android:id="@+id/pref_view"
         android:text="Preferences: "
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="36sp"/>
+        android:textSize="36sp"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/small"
         android:text="     please type in your attire preference"
-        android:layout_below="@+id/pref_view"/>
+        android:layout_below="@+id/pref_view"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -30,20 +34,26 @@
         android:layout_below="@+id/small"
         android:id="@+id/aboveEightyStatic"
         android:text="Temp above 80°F: "
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/aboveEightyStatic"
         android:id="@+id/aboveEightyEdit"
-        android:hint="  ex.  Shorts and T-Shirt" />
+        android:hint="  ex.  Shorts and T-Shirt"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/btwEightySixty"
         android:layout_below="@id/aboveEightyEdit"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Between 55°F and 75°F"/>
+        android:text="Between 55°F and 75°F"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -51,7 +61,8 @@
         android:layout_below="@id/btwEightySixty"
         android:id="@id/btwEightySixtyEdit"
         android:hint="   ex.  Pants/Shorts and long sleeve"
-        />
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light" />
 
     <TextView
         android:layout_width="match_parent"
@@ -67,7 +78,8 @@
         android:layout_below="@id/btwSixtyforty"
         android:id="@id/btwSixtyFortyEdit"
         android:hint="   ex.  Jeans, Sweater, and Jacket"
-        />
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light" />
 
     <TextView
         android:layout_width="match_parent"
@@ -75,7 +87,9 @@
         android:id="@+id/UnderThirtyFive"
         android:layout_below="@id/btwSixtyFortyEdit"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Under 35°F"/>
+        android:text="Under 35°F"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -83,14 +97,17 @@
         android:layout_below="@id/UnderThirtyFive"
         android:id="@id/UnderThirtyFiveEdit"
         android:hint="   ex.  Jeans and Trench Coat"
-        />
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/UnderThirtyFiveEdit"
         android:id="@+id/submit"
-        android:text="Submit"/>
+        android:text="Submit"
+        android:textColor="#020202"
+        android:fontFamily="sans-serif-light"/>
 
 
 
